@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warmindo Gaul</title>
+    <style>
+        body {
+             font-family: Arial, sans-serif;
+             background-color: #f3f4f6;
+             display: flex;
+             flex-direction: column;
+             align-items: center;
+             padding: 20px;
+        }
+
+        h1 {
+        font-size: 2.5em;
+        color: white;
+        text-align: center;
+        margin-bottom: 20px;
+        padding: 40px;
+        background-color: #ff9800; /* Warna latar belakang */
+        border-radius: 10px; /* Membuat sudut melengkung */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan */
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        header {
+            background-color: #ff9800;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #ff5722;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 10px;
+        }
+        nav a:hover {
+            background-color: #681f09;
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+        .cta-button {
+            background-color: #ff9800;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        .cta-button:hover {
+            background-color: #e65100;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+        }
+
+
+        footer {
+            background-color: #ff9800;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            bottom: 0px;
+            width: 100%;
+        }
+
+        footer a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .photo-gallery {
+            display: flex;
+            gap: 15px; /* Memberikan jarak antar gambar */
+            flex-wrap: wrap; /* Membuat foto membungkus ke baris berikutnya jika diperlukan */
+            justify-content: center; /* Menyusun foto di tengah */
+            margin-bottom: 50px;
+        }
+
+        .photo-gallery img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+        <h1>Welcome to Warmindo Gaul</h1>
+        <p>Makanan Enak, Harga Bersahabat</p>
+         </div>
+    </header>
+    
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="lokasi.html">Lokasi</a>
+    </nav>
+    
+    <div class="content">
+        <h2>Selamat Datang di Warmindo Gaul</h2>
+        <p>Nikmati berbagai macam makanan dan minuman favorit dengan harga yang bersahabat.</p>
+        <a href="menu.html" class="cta-button">Lihat Menu</a>
+    </div>
+
+    <div class="photo-gallery">
+        <img src="miebangladesh.jpg" alt="Foto 1">
+        <img src="miegoreng.jpeg" alt="Foto 2">
+        <img src="miekare.webp" alt="Foto 3">
+        <img src="mienyemek.jpg" alt="Foto 4">
+        <img src="mierendang.webp" alt="Foto 5">
+    </div>
+
+    <footer>
+        <p>© 2024 Warmindo Gaul | <a href="/privacy-policy">Kebijakan Privasi | <a href="/contact-us">Kontak Kami</a></a></p>
+    </footer>
+
+</body>
+</html>

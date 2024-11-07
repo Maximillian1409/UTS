@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warmindo Gaul</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+             background-color: #f3f4f6;
+             display: flex;
+             flex-direction: column;
+             align-items: center;
+             padding: 20px;
+        }
+
+        header {
+            background-color: #ff9800;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 10px ;
+        }
+
+        h1 {
+        font-size: 2.5em;
+        color: white;
+        text-align: center;
+        margin-bottom: 20px;
+        padding: 40px;
+        background-color: #ff9800; /* Warna latar belakang */
+        border-radius: 10px; /* Membuat sudut melengkung */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan */
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 10px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .form-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            width: 300px;
+            margin: 5px;
+        }
+
+        input[type="button"] {
+            padding: 10px 20px;
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="button"]:hover {
+            background-color: #ff5722;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #ff5722;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background-color: #681f09;
+        }
+
+        footer {
+            background-color: #ff9800;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            bottom: 0px;
+            width: 100%;
+        }
+
+        footer a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Formulir Lokasi dan Pengiriman</h1>
+        <p>Makanan Enak, Harga Bersahabat</p>
+    </header>
+    
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="lokasi.html">Lokasi</a>
+    </nav>
+
+    <div class="form-container">
+        <input type="text" id="alamat" placeholder="Masukan Alamat Pengiriman">
+        <input type="button" value="Tambah Lokasi" onclick="tambahLokasi()">
+    </div>
+    
+    <h2>Tabel Lokasi</h2>
+    <table id="tabel-lokasi">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Alamat</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <h2>Tabel Pengiriman</h2>
+    <table id="tabel-pengiriman">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Alamat Pengiriman</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script>
+        let lokasiCount = 0;
+
+        // Fungsi untuk menambahkan lokasi ke tabel lokasi
+        function tambahLokasi() {
+            const alamat = document.getElementById('alamat').value;
+
+            // Validasi input, pastikan alamat tidak kosong
+            if (alamat.trim() === "") {
+                alert("Alamat tidak boleh kosong!");
+                return;
+            }
+
+            lokasiCount++;
+
+            // Menambahkan data ke Tabel Lokasi
+            const tabelLokasi = document.getElementById('tabel-lokasi').getElementsByTagName('tbody')[0];
+            const row = tabelLokasi.insertRow();
+            row.innerHTML = `
+                <td>${lokasiCount}</td>
+                <td>${alamat}</td>
+                <td><input type="button" value="Kirim" onclick="tambahPengiriman('${alamat}')"></td>
+            `;
+
+            // Kosongkan input setelah data ditambahkan
+            document.getElementById('alamat').value = "";
+        }
+
+        // Fungsi untuk menambahkan alamat pengiriman ke Tabel Pengiriman
+        function tambahPengiriman(alamat) {
+            // Menambahkan data ke Tabel Pengiriman
+            const tabelPengiriman = document.getElementById('tabel-pengiriman').getElementsByTagName('tbody')[0];
+            const row = tabelPengiriman.insertRow();
+            row.innerHTML = `
+                <td>${tabelPengiriman.rows.length + 1}</td>
+                <td>${alamat}</td>
+                <td>Proses Pengiriman</td>
+            `;
+        }
+    </script>
+
+
+    <footer>
+        <p>© 2024 Warmindo Gaul | <a href="/privacy-policy">Kebijakan Privasi | <a href="/contact-us">Kontak Kami</a></a></p>
+    </footer>
+
+</body>
+</html>
