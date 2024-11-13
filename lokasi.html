@@ -163,11 +163,11 @@
     <script>
         let lokasiCount = 0;
 
-        // Fungsi untuk menambahkan lokasi ke tabel lokasi
+        
         function tambahLokasi() {
             const alamat = document.getElementById('alamat').value;
 
-            // Validasi input, pastikan alamat tidak kosong
+            
             if (alamat.trim() === "") {
                 alert("Alamat tidak boleh kosong!");
                 return;
@@ -175,7 +175,7 @@
 
             lokasiCount++;
 
-            // Menambahkan data ke Tabel Lokasi
+            
             const tabelLokasi = document.getElementById('tabel-lokasi').getElementsByTagName('tbody')[0];
             const row = tabelLokasi.insertRow();
             row.innerHTML = `
@@ -184,13 +184,13 @@
                 <td><input type="button" value="Kirim" onclick="tambahPengiriman('${alamat}')"></td>
             `;
 
-            // Kosongkan input setelah data ditambahkan
+            
             document.getElementById('alamat').value = "";
         }
 
-        // Fungsi untuk menambahkan alamat pengiriman ke Tabel Pengiriman
+        
         function tambahPengiriman(alamat) {
-            // Menambahkan data ke Tabel Pengiriman
+            
             const tabelPengiriman = document.getElementById('tabel-pengiriman').getElementsByTagName('tbody')[0];
             const row = tabelPengiriman.insertRow();
             row.innerHTML = `
